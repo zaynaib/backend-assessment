@@ -1,4 +1,8 @@
 //https://stackoverflow.com/questions/13151693/passing-arguments-to-require-when-loading-module
+//https://levelup.gitconnected.com/table-relationships-in-sequelize-2e2533580c2a
+//https://stackoverflow.com/questions/14169655/sequelize-js-foreign-key
+//https://stackoverflow.com/questions/10216395/error-failed-to-lookup-view-in-express/12167582#12167582
+//http://zetcode.com/javascript/dotenv/
 
 //dependencies
 
@@ -13,10 +17,16 @@ const PORT = process.env.PORT || 3000;
 //server static files
 // Static directory to be served
 
-app.use(express.static(`${__dirname}/app/public`));
 
 //middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+app.use(express.static(`${__dirname}/app/public`));
+
+
 
 //templating
 app.set('view engine', 'pug');
