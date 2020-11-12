@@ -3,6 +3,8 @@
 //https://stackoverflow.com/questions/14169655/sequelize-js-foreign-key
 //https://stackoverflow.com/questions/10216395/error-failed-to-lookup-view-in-express/12167582#12167582
 //http://zetcode.com/javascript/dotenv/
+//https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/
+//https://stackoverflow.com/questions/21066755/how-does-sequelize-sync-work-specifically-the-force-option
 
 //dependencies
 

@@ -1,14 +1,4 @@
 
-// module.exports = function(app){
-    
-// app.get('/', (req, res) => {
-//     //res.send('Hello World!')
-//    res.render('index', { title: 'Hey', message: 'Hello there!' })
-
-//   })
-
-// }
-
 // This may be confusing but here Sequelize (capital) references the standard library
 var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
@@ -22,6 +12,8 @@ db.sequelize = sequelize;
 
 
 const Tenant = require("../models/tenant")(sequelize,Sequelize);
+const Unit = require("../models/unit")(sequelize,Sequelize);
+
 
 
 module.exports = function(app){
@@ -31,8 +23,16 @@ app.get('/', (req, res) => {
 
   })
 
-  app.get("/api/all",function(req,res){
+  app.get("/api/tenants",function(req,res){
         Tenant.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
+
+  })
+
+    app.get("/api/units",function(req,res){
+        Unit.findAll({}).then(function(results) {
       // results are available to us inside the .then
       res.json(results);
     });

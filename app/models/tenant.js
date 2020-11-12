@@ -1,3 +1,4 @@
+  'use strict'
   // Makes the Chirp Model available for other files (will also create a table)
 module.exports =  (sequelize, DataTypes) => {
       //Creates a "Chirp" model that matches up with DB
@@ -29,7 +30,8 @@ module.exports =  (sequelize, DataTypes) => {
       });
     };
 
-
+    // Syncs with DB
+    Tenant.sync();
     return Tenant;
 
   };
