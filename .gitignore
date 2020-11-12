@@ -1,2 +1,9 @@
 node_modules
+<<<<<<< HEAD
 .env
+||||||| 014514e
+config
+=======
+config
+.env
+>>>>>>> 4b3eeba93a90bfb89b88c2856b0aa34f94263179
