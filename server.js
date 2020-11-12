@@ -1,5 +1,4 @@
 //https://stackoverflow.com/questions/13151693/passing-arguments-to-require-when-loading-module
-<<<<<<< HEAD
 //https://levelup.gitconnected.com/table-relationships-in-sequelize-2e2533580c2a
 //https://stackoverflow.com/questions/14169655/sequelize-js-foreign-key
 //https://stackoverflow.com/questions/10216395/error-failed-to-lookup-view-in-express/12167582#12167582
@@ -7,13 +6,6 @@
 //https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/
 //https://stackoverflow.com/questions/21066755/how-does-sequelize-sync-work-specifically-the-force-option
 //https://www.youtube.com/watch?v=3Nvx0mNXPc4
-||||||| 014514e
-=======
-//https://levelup.gitconnected.com/table-relationships-in-sequelize-2e2533580c2a
-//https://stackoverflow.com/questions/14169655/sequelize-js-foreign-key
-//https://stackoverflow.com/questions/10216395/error-failed-to-lookup-view-in-express/12167582#12167582
-//http://zetcode.com/javascript/dotenv/
->>>>>>> 4b3eeba93a90bfb89b88c2856b0aa34f94263179
 
 //dependencies
 
