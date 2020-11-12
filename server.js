@@ -5,6 +5,7 @@
 //http://zetcode.com/javascript/dotenv/
 //https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/
 //https://stackoverflow.com/questions/21066755/how-does-sequelize-sync-work-specifically-the-force-option
+//https://www.youtube.com/watch?v=3Nvx0mNXPc4
 
 //dependencies
 

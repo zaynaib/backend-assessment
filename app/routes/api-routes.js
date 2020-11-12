@@ -16,6 +16,7 @@ const Unit = require("../models/unit")(sequelize,Sequelize);
 
 
 
+
 module.exports = function(app){
     
 app.get('/', (req, res) => {
@@ -31,13 +32,30 @@ app.get('/', (req, res) => {
 
   })
 
+   app.post("/api/tenants", function(req, res) {
+    Tenant.create(req.body).then(function(Tenant) {
+      res.json(Tenant);
+    });
+  });
+
     app.get("/api/units",function(req,res){
         Unit.findAll({}).then(function(results) {
       // results are available to us inside the .then
       res.json(results);
     });
 
-  })
+  });
+
+  
+  app.delete("/api/tenants/:id", function(req, res) {
+    Tenant.destroy({
+      where: {
+        tenantID: req.params.id
+      }
+    }).then(function(dbTenant) {
+      res.json(dbTenant);
+    });
+  });
 
 }
 
