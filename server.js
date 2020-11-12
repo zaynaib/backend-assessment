@@ -6,7 +6,7 @@
 //https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/
 //https://stackoverflow.com/questions/21066755/how-does-sequelize-sync-work-specifically-the-force-option
 //https://www.youtube.com/watch?v=3Nvx0mNXPc4
-
+//https://stackoverflow.com/questions/20386402/sequelize-unknown-column-createdat-in-field-list
 //dependencies
 
 const express = require('express');

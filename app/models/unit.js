@@ -9,20 +9,26 @@ module.exports =  (sequelize, DataTypes) => {
           primaryKey: true,
           autoIncrement: true,
       },
-    bedrooms: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    floor: {
-      type: DataTypes.INTEGER,
-      allowNull : false
-    },
-    rent: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    }
+      
+      // bedrooms :{
+      //     type: DataTypes.INTEGER,
+      //     allowNull: false,
+      // },
 
-    });
+    // floor: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull : false
+    // },
+    // rent: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false
+    // }, 
+    
+
+
+    }, {
+    timestamps: false
+});
 
     
     Unit.associate = (models) =>{
