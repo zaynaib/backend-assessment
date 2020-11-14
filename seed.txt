@@ -1,0 +1,28 @@
+"tenantID": 1,
+"firstName": "meta",
+"lastName":"worldpeace",
+"email": "metaworldpeace@gmail.com"
+
+
+"tenantID": 2,
+"firstName": "Jimmy",
+"lastName":"butler",
+"email": "jimmybutler@gmail.com"
+
+
+
+"tenantID": 3,
+"firstName": "Jimmy",
+"lastName":"butler",
+"email": "jimmybutler@gmail.com"
+
+
+"unitID": 1,
+"bedrooms": 2,
+"floor":1,
+"rent": 300
+
+"unitID": 2,
+"bedrooms": 3,
+"floor":2,
+"rent": 600

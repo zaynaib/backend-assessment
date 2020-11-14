@@ -82,6 +82,13 @@ app.get('/', (req, res) => {
       /*                                Unit Routes                                 */
       /* -------------------------------------------------------------------------- */
 
+      app.get("/api/units",function(req,res){
+        Unit.findAll({}).then( units=> {
+      res.json(units);
+    });
+
+  })
+
 
 }
 
