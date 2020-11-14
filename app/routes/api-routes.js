@@ -12,7 +12,7 @@ db.sequelize = sequelize;
 
 
 const Tenant = require("../models/tenant")(sequelize,Sequelize);
-const Unit = require("../models/unit")(sequelize,Sequelize);
+// const Unit = require("../models/unit")(sequelize,Sequelize);
 
 
 module.exports = function(app){
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
   })
 
-
+  //Read
   app.get("/api/tenants",function(req,res){
         Tenant.findAll({}).then(function(results) {
       // results are available to us inside the .then
@@ -30,14 +30,19 @@ app.get('/', (req, res) => {
     });
 
   })
-
-   app.post("/api/tenants", function(req, res) {
-    Tenant.create(req.body).then(function(Tenant) {
-      res.json(Tenant);
-    });
-  });
-
   
+  //create
+  //  app.post("/api/tenants", function(req, res) {
+  //   Tenant.create(req.body).then(function(Tenant) {
+  //     res.json(Tenant);
+  //   });
+  // });
+
+  app.post('/api/tenants', (req,res) =>{
+    Tenant.create(req.body).then(newTenant =>{res.json(newTenant)})
+  })
+
+  //delete
   app.delete("/api/tenants/:id", function(req, res) {
     Tenant.destroy({
       where: {
@@ -48,38 +53,23 @@ app.get('/', (req, res) => {
     });
   });
 
-    app.get("/api/units",function(req,res){
-        Unit.findAll({}).then(function(results) {
-      // results are available to us inside the .then
-      res.json(results);
+  //update
+    // PUT route for updating todos. We can get the updated todo data from req.body
+    app.put("/api/tenants/:id", function(req, res) {
+      // Update takes in an object describing the properties we want to update, and
+      // we use where to describe which objects we want to update
+      Tenant.update({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email
+      }, {
+        where: {
+          tenantID: req.params.id
+        }
+      }).then(function(dbTenant) {
+        res.json(dbTenant);
+      });
     });
-
-  })
-
-   app.post("/api/units", function(req, res) {
-    Unit.create(req.body).then(function(unitID) {
-      res.json(unitID);
-    });
-  });
-
-    app.get("/api/units",function(req,res){
-        Unit.findAll({}).then(function(results) {
-      // results are available to us inside the .then
-      res.json(results);
-    });
-
-  });
-
-  
-  app.delete("/api/units/:id", function(req, res) {
-    Tenant.destroy({
-      where: {
-        UnitID: req.params.id
-      }
-    }).then(function(dbUnit) {
-      res.json(dbUnit);
-    });
-  });
 
 
 }

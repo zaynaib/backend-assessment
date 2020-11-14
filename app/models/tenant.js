@@ -8,7 +8,8 @@ module.exports =  (sequelize, DataTypes) => {
       tenantID :{
           type: DataTypes.INTEGER,
           primaryKey: true,
-          autoIncrement: true,
+          unique:true,
+      
       },
       firstName: {
         type: DataTypes.STRING,
