@@ -1,6 +1,8 @@
   //https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/
   'use strict'
+  // Makes the Tenant Model available for other files (will also create a table)
 module.exports =  (sequelize, DataTypes) => {
+      //Creates a "Tenant" model 
   const Tenant = sequelize.define("tenant",{ 
 
       tenantID :{
@@ -25,11 +27,10 @@ module.exports =  (sequelize, DataTypes) => {
     });
 
     
-    Tenant.associate = (models) =>{
-      Tenant.hasOne(models.Unit,{
-        onDelete: "cascade"
-      });
-    };
+    // Tenant.associate = (models) =>{
+    //   Tenant.hasOne(models.Unit,{
+    //   });
+    // };
 
     // Syncs with DB
     Tenant.sync();

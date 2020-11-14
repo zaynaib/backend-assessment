@@ -1,4 +1,5 @@
   'use strict'
+  // Makes the Unit  Model available for other files (will also create a table)
 
 module.exports =  (sequelize, DataTypes) => {
 
@@ -15,10 +16,10 @@ module.exports =  (sequelize, DataTypes) => {
       //     allowNull: false,
       // },
 
-    // floor: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull : false
-    // },
+    floor: {
+      type: DataTypes.INTEGER,
+      allowNull : false
+    },
     // rent: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false
@@ -31,13 +32,13 @@ module.exports =  (sequelize, DataTypes) => {
 });
 
     
-    Unit.associate = (models) =>{
-      Unit.belongsTo(models.Tenant,{
-   foreignKey:{
-             allowNull:false
-         } 
-              });
-    };
+  //   Unit.associate = (models) =>{
+  //     Unit.belongsTo(models.Tenant,{
+  //  foreignKey:{
+  //            allowNull:false
+  //        } 
+  //             });
+  //   };
 
     // Syncs with DB
     Unit.sync();
