@@ -30,6 +30,17 @@ app.get('/', (req, res) => {
     });
 
   });
+
+  app.get("/api/tenants/:id",function(req,res){
+    Tenant.findAll({
+      where:{tenantID:req.params.id}
+
+    }).then(tenant => {
+  // results are available to us inside the .then
+  res.json(tenant);
+});
+
+});
   
 
   app.post('/api/tenants', (req,res) =>{
