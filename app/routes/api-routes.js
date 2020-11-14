@@ -57,8 +57,8 @@ app.get('/', (req, res) => {
   })
 
    app.post("/api/units", function(req, res) {
-    Tenant.create(req.body).then(function(Tenant) {
-      res.json(Tenant);
+    Unit.create(req.body).then(function(unitID) {
+      res.json(unitID);
     });
   });
 

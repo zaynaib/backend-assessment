@@ -1,7 +1,6 @@
+  //https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/
   'use strict'
-  // Makes the Chirp Model available for other files (will also create a table)
 module.exports =  (sequelize, DataTypes) => {
-      //Creates a "Chirp" model that matches up with DB
   const Tenant = sequelize.define("tenant",{ 
 
       tenantID :{
