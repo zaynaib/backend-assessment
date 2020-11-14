@@ -12,7 +12,7 @@ db.sequelize = sequelize;
 
 
 const Tenant = require("../models/tenant")(sequelize,Sequelize);
-// const Unit = require("../models/unit")(sequelize,Sequelize);
+const Unit = require("../models/unit")(sequelize,Sequelize);
 
 
 module.exports = function(app){
@@ -22,11 +22,14 @@ app.get('/', (req, res) => {
 
   })
 
-  //Read
+  /* -------------------------------------------------------------------------- */
+  /*                                Tenant Routes                               */
+  /* -------------------------------------------------------------------------- */
+
+  //Read Route
   app.get("/api/tenants",function(req,res){
-        Tenant.findAll({}).then(results => {
-      // results are available to us inside the .then
-      res.json(results);
+        Tenant.findAll({}).then(tenants => {
+      res.json(tenants);
     });
 
   });
@@ -36,30 +39,28 @@ app.get('/', (req, res) => {
       where:{tenantID:req.params.id}
 
     }).then(tenant => {
-  // results are available to us inside the .then
   res.json(tenant);
 });
 
 });
   
-
+  //Create Route
   app.post('/api/tenants', (req,res) =>{
     Tenant.create(req.body).then(newTenant =>{res.json(newTenant)})
   })
 
-  //delete
+  //Delete Route
   app.delete("/api/tenants/:id", (req, res)=> {
     Tenant.destroy({
       where: {
         tenantID: req.params.id
       }
-    }).then(dbTenant =>{
-      res.json(dbTenant);
+    }).then(deletedTenant =>{
+      res.json(deletedTenant);
     });
   });
 
-  //update
-    // PUT route for updating todos. We can get the updated todo data from req.body
+  //Update Route
     app.put("/api/tenants/:id", (req, res) =>{
       // Update takes in an object describing the properties we want to update, and
       // we use where to describe which objects we want to update
@@ -75,6 +76,11 @@ app.get('/', (req, res) => {
         res.json(dbTenant);
       });
     });
+
+
+      /* -------------------------------------------------------------------------- */
+      /*                                Unit Routes                                 */
+      /* -------------------------------------------------------------------------- */
 
 
 }
