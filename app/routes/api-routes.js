@@ -24,38 +24,32 @@ app.get('/', (req, res) => {
 
   //Read
   app.get("/api/tenants",function(req,res){
-        Tenant.findAll({}).then(function(results) {
+        Tenant.findAll({}).then(results => {
       // results are available to us inside the .then
       res.json(results);
     });
 
-  })
+  });
   
-  //create
-  //  app.post("/api/tenants", function(req, res) {
-  //   Tenant.create(req.body).then(function(Tenant) {
-  //     res.json(Tenant);
-  //   });
-  // });
 
   app.post('/api/tenants', (req,res) =>{
     Tenant.create(req.body).then(newTenant =>{res.json(newTenant)})
   })
 
   //delete
-  app.delete("/api/tenants/:id", function(req, res) {
+  app.delete("/api/tenants/:id", (req, res)=> {
     Tenant.destroy({
       where: {
         tenantID: req.params.id
       }
-    }).then(function(dbTenant) {
+    }).then(dbTenant =>{
       res.json(dbTenant);
     });
   });
 
   //update
     // PUT route for updating todos. We can get the updated todo data from req.body
-    app.put("/api/tenants/:id", function(req, res) {
+    app.put("/api/tenants/:id", (req, res) =>{
       // Update takes in an object describing the properties we want to update, and
       // we use where to describe which objects we want to update
       Tenant.update({
@@ -66,7 +60,7 @@ app.get('/', (req, res) => {
         where: {
           tenantID: req.params.id
         }
-      }).then(function(dbTenant) {
+      }).then(dbTenant =>{
         res.json(dbTenant);
       });
     });
