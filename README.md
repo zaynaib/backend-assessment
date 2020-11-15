@@ -29,3 +29,12 @@ The owner of a multi-tenant apartment building has approached you to design and 
 * Anything else you can think of
 
 ![alt-text](./er-diagram.png)
+
+
+## How to run and install
+
+1. Clone repo git clone git@github.com:zaynaib/devmynd_test.git
+2. Install npm dependencies ```npm install```
+3. Create a sql database called **apartments**
+4. In the terminal run nodemon `server.js`
+5. Test Routes in postman
