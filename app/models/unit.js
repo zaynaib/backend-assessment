@@ -24,6 +24,10 @@ module.exports =  (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    tenantId:{
+        type: DataTypes.UUID,
+        allowNull: false
+    }
     
     }, {
     timestamps: false

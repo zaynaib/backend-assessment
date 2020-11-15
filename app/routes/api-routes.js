@@ -117,7 +117,8 @@ app.get('/', (req, res) => {
       Unit.update({
         bedrooms: req.body.bedrooms,
         floor: req.body.floor,
-        rent: req.body.rent
+        rent: req.body.rent,
+        tenantId: req.body.tenantId
       }, {
         where: {
           id: req.params.id
