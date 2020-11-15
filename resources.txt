@@ -8,3 +8,5 @@ https://stackoverflow.com/questions/21066755/how-does-sequelize-sync-work-specif
 https://www.youtube.com/watch?v=3Nvx0mNXPc4
 https://stackoverflow.com/questions/20386402/sequelize-unknown-column-createdat-in-field-list
 https://dba.stackexchange.com/questions/74627/difference-between-on-delete-cascade-on-update-cascade-in-mysql
+https://medium.com/@smallbee/how-to-use-sequelize-sync-without-difficulties-4645a8d96841
+https://stackoverflow.com/questions/21105748/sequelize-js-how-to-use-migrations-and-sync
