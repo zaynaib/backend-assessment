@@ -28,3 +28,9 @@
 "floor":2,
 "rent": 600,
 "tenantId": 2
+
+"id":1,
+"tenantId":1,
+"note": "toliet wont flush",
+"type":"plumbing",
+"complete":false
