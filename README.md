@@ -27,3 +27,5 @@ The owner of a multi-tenant apartment building has approached you to design and 
 * Maintenance request tracking
 * Testing
 * Anything else you can think of
+
+![alt-text](./er-diagram.png)
