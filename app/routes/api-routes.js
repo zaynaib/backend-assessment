@@ -4,13 +4,6 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
 
-const db = {};
-
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-
-
-
 const Tenant = require("../models/tenant")(sequelize,Sequelize);
 const Unit = require("../models/unit")(sequelize,Sequelize);
 
@@ -132,5 +125,3 @@ app.get('/', (req, res) => {
 
 
 }
-
-

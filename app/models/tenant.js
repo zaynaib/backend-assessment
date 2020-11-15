@@ -28,12 +28,6 @@ module.exports =  (sequelize, DataTypes) => {
     timestamps: false
     });
 
-    
-    // Tenant.associate = (models) =>{
-    //   Tenant.hasOne(models.Unit,{
-    //   });
-    // };
-
     // Syncs with DB
     Tenant.sync();
     return Tenant;

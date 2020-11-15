@@ -33,15 +33,6 @@ module.exports =  (sequelize, DataTypes) => {
     timestamps: false
 });
 
-    
-//     Unit.associate = (models) =>{
-//       Unit.belongsTo(models.Tenant,{
-//    foreignKey:{
-//              allowNull:false
-//          } 
-//               });
-//     };
-
     // Syncs with DB
     Unit.sync();
     return Unit;
