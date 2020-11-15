@@ -5,7 +5,7 @@ module.exports =  (sequelize, DataTypes) => {
       //Creates a "Tenant" model 
   const Tenant = sequelize.define("tenant",{ 
 
-      tenantID :{
+       id:{
           type: DataTypes.UUID,
           primaryKey: true,
           unique:true,

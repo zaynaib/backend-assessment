@@ -1,16 +1,16 @@
-"tenantID": 1,
+"id": 1,
 "firstName": "meta",
 "lastName":"worldpeace",
 "email": "metaworldpeace@gmail.com"
 
 
-"tenantID": 2,
+"id": 2,
 "firstName": "Jimmy",
 "lastName":"butler",
 "email": "jimmybutler@gmail.com"
 
 
-"tenantID": 3,
+"id": 3,
 "firstName": "Nneka",
 "lastName":"Ogwumike",
 "email": "nneka@gmail.com"

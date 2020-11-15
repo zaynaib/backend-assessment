@@ -15,8 +15,8 @@ const Tenant = require("../models/tenant")(sequelize,Sequelize);
 const Unit = require("../models/unit")(sequelize,Sequelize);
 
 //Relations
-//Unit.belongsTo(Tenant,{});
-//Tenant.hasOne(Unit);
+Tenant.hasOne(Unit);
+Unit.belongsTo(Tenant,{});
 
 
 module.exports = function(app){
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 
   app.get("/api/tenants/:id",function(req,res){
     Tenant.findAll({
-      where:{tenantID:req.params.id}
+      where:{id:req.params.id}
 
     }).then(tenant => {
   res.json(tenant);
@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
   app.delete("/api/tenants/:id", (req, res)=> {
     Tenant.destroy({
       where: {
-        tenantID: req.params.id
+        id: req.params.id
       }
     }).then(deletedTenant =>{
       res.json(deletedTenant);
@@ -74,7 +74,7 @@ app.get('/', (req, res) => {
         email: req.body.email
       }, {
         where: {
-          tenantID: req.params.id
+          id: req.params.id
         }
       }).then(dbTenant =>{
         res.json(dbTenant);

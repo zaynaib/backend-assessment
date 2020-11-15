@@ -23,7 +23,7 @@ module.exports =  (sequelize, DataTypes) => {
     rent: {
       type: DataTypes.INTEGER,
       allowNull: false
-    }
+    },
     
     }, {
     timestamps: false
