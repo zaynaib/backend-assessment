@@ -10,11 +10,10 @@
 "email": "jimmybutler@gmail.com"
 
 
-
 "tenantID": 3,
-"firstName": "Jimmy",
-"lastName":"butler",
-"email": "jimmybutler@gmail.com"
+"firstName": "Nneka",
+"lastName":"Ogwumike",
+"email": "nneka@gmail.com"
 
 
 "unitID": 1,

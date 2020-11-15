@@ -84,10 +84,44 @@ app.get('/', (req, res) => {
 
       app.get("/api/units",function(req,res){
         Unit.findAll({}).then( units=> {
-      res.json(units);
-    });
+        res.json(units);
+        });
+      });
 
-  })
+
+        //Create Route
+      app.post('/api/units', (req,res) =>{
+        Unit.create(req.body).then(newUnit =>{res.json(newUnit)})
+      });
+
+
+       //Delete Route
+  app.delete("/api/units/:id", (req, res)=> {
+    Unit.destroy({
+      where: {
+        unitID: req.params.id
+      }
+    }).then(deletedUnit =>{
+      res.json(deletedUnit);
+    });
+  });
+
+  //Update Route
+    app.put("/api/units/:id", (req, res) =>{
+      // Update takes in an object describing the properties we want to update, and
+      // we use where to describe which objects we want to update
+      Unit.update({
+        bedrooms: req.body.bedrooms,
+        floor: req.body.floor,
+        rent: req.body.rent
+      }, {
+        where: {
+          unitID: req.params.id
+        }
+      }).then(updatedUnit =>{
+        res.json(updatedUnit);
+      });
+    });
 
 
 }
