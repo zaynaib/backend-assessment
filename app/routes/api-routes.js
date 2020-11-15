@@ -103,7 +103,7 @@ app.get('/', (req, res) => {
   app.delete("/api/units/:id", (req, res)=> {
     Unit.destroy({
       where: {
-        unitID: req.params.id
+        id: req.params.id
       }
     }).then(deletedUnit =>{
       res.json(deletedUnit);
@@ -120,7 +120,7 @@ app.get('/', (req, res) => {
         rent: req.body.rent
       }, {
         where: {
-          unitID: req.params.id
+          id: req.params.id
         }
       }).then(updatedUnit =>{
         res.json(updatedUnit);

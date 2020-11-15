@@ -4,7 +4,7 @@ module.exports =  (sequelize, DataTypes) => {
 
   const Unit = sequelize.define("unit",{ 
 
-      unitID :{
+      id :{
           type: DataTypes.UUID,
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4
