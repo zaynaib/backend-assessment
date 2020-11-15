@@ -31,7 +31,7 @@ const Repair = sequelize.define("repair",{
   });
 
   // Syncs with DB
-  Tenant.sync();
-  return Tenant;
+  Repair.sync();
+  return Repair;
 
 };
