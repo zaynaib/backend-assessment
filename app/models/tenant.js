@@ -6,9 +6,10 @@ module.exports =  (sequelize, DataTypes) => {
   const Tenant = sequelize.define("tenant",{ 
 
       tenantID :{
-          type: DataTypes.INTEGER,
+          type: DataTypes.UUID,
           primaryKey: true,
           unique:true,
+          defaultValue:DataTypes.UUIDV4
       
       },
       firstName: {

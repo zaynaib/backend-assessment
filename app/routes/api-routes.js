@@ -14,6 +14,10 @@ db.sequelize = sequelize;
 const Tenant = require("../models/tenant")(sequelize,Sequelize);
 const Unit = require("../models/unit")(sequelize,Sequelize);
 
+//Relations
+//Unit.belongsTo(Tenant,{});
+//Tenant.hasOne(Unit);
+
 
 module.exports = function(app){
     

@@ -5,9 +5,10 @@ module.exports =  (sequelize, DataTypes) => {
   const Unit = sequelize.define("unit",{ 
 
       unitID :{
-          type: DataTypes.INTEGER,
+          type: DataTypes.UUID,
           primaryKey: true,
-          autoIncrement: true,
+          defaultValue: DataTypes.UUIDV4
+
       },
       
       bedrooms:{
