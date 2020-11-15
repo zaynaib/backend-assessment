@@ -15,8 +15,10 @@ const Tenant = require("../models/tenant")(sequelize,Sequelize);
 const Unit = require("../models/unit")(sequelize,Sequelize);
 
 //Relations
-Tenant.hasOne(Unit);
-Unit.belongsTo(Tenant,{});
+Tenant.hasOne(Unit,{
+  onDelete: 'SET NULL',
+});
+Unit.belongsTo(Tenant);
 
 
 module.exports = function(app){

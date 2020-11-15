@@ -15,13 +15,16 @@
 "lastName":"Ogwumike",
 "email": "nneka@gmail.com"
 
+/////// UNIT SEED //////
 
-"unitID": 1,
+"id": 1,
 "bedrooms": 2,
 "floor":1,
-"rent": 300
+"rent": 300,
+"tenantId": 1
 
-"unitID": 2,
+"id": 2,
 "bedrooms": 3,
 "floor":2,
-"rent": 600
+"rent": 600,
+"tenantId": 2
