@@ -5,7 +5,7 @@ const Tenant = require("./app/models/tenant")(sequelize, Sequelize);
 const Unit = require("./app/models/unit")(sequelize, Sequelize);
 const Repair = require("./app/models/repair")(sequelize, Sequelize);
 
-//Relations
+// set up database relationships
 Tenant.hasOne(Unit,{
     onDelete: 'SET NULL',
   });
