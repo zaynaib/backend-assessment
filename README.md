@@ -35,6 +35,54 @@ The owner of a multi-tenant apartment building has approached you to design and 
 
 1. Clone repo git clone git@github.com:zaynaib/backend-assessment.git
 2. Install npm dependencies ```npm install```
-3. Create a sql database called **apartments**
-4. In the terminal run nodemon `server.js`
-5. Test Routes in postman
+3. Create a sql database called **apartments**  use the [SQL Schema](./app/schema.sql) file
+4. Change the [connection.js](./app/config/connection.js) to connect your database to the app
+5. In the terminal run nodemon `server.js`
+6. Test Routes in postman
+
+## Routes
+
+### Tenant Routes
+
+**GET**
+/api/tenants
+/api/tenants/:id
+
+**POST**
+/api/tenants
+
+**UPDATE**
+/api/tenants/:id
+
+**DELETE**
+/api/tenants/:id
+
+### Unit Routes
+
+**GET**
+/api/units
+/api/units/:id
+
+**POST**
+/api/units
+
+**UPDATE**
+/api/units/:id
+
+**DELETE**
+/api/units/:id
+
+### Repair Routes
+
+**GET**
+/api/repairs
+/api/repairs/:id
+
+**POST**
+/api/repairs
+
+**UPDATE**
+/api/repairs/:id
+
+**DELETE**
+/api/repairs/:id
