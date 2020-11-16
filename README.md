@@ -40,6 +40,15 @@ The owner of a multi-tenant apartment building has approached you to design and 
 5. In the terminal run nodemon `server.js`
 6. Test Routes in postman
 
+## Models
+Tenant
+id
+
+Unit
+
+Reapair
+
+
 ## Routes
 
 ### Tenant Routes
