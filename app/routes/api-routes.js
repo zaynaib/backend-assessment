@@ -8,16 +8,6 @@ const Tenant = require("../models/tenant")(sequelize,Sequelize);
 const Unit = require("../models/unit")(sequelize,Sequelize);
 const Repair = require("../models/repair")(sequelize,Sequelize);
 
-//Relations
-Tenant.hasOne(Unit,{
-  onDelete: 'SET NULL',
-});
-Tenant.hasMany(Repair);
-
-Unit.belongsTo(Tenant);
-Repair.belongsTo(Tenant);
-
-
 module.exports = function(app){
     
 app.get('/', (req, res) => {

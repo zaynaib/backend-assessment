@@ -37,8 +37,9 @@ The owner of a multi-tenant apartment building has approached you to design and 
 2. Install npm dependencies ```npm install```
 3. Create a sql database called **apartments**  use the [SQL Schema](./app/schema.sql) file
 4. Change the [connection.js](./app/config/connection.js) to connect your database to the app
-5. In the terminal run nodemon `server.js`
-6. Test Routes in postman
+5. 
+6. In the terminal run nodemon `server.js`
+7. Test Routes in postman
 
 ## Routes
 
