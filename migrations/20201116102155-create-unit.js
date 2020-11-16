@@ -21,7 +21,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tenantId: {
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
+        references: {
+          model:'Tenant',
+          key:'id',
+          onDelete: 'SET NULL'
+        }
       }
 
     }, {timestamps:false}
