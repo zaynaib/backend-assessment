@@ -18,20 +18,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       type: {
-        type: Sequelize.ENUM('conditioning','flooring','plumbing','other')
+        type: Sequelize.ENUM("flooring","plumbing","landscaping","other")
       },
       complete: {
         type: Sequelize.BOOLEAN
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
-    });
+    }),{timestamps:false};
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Repairs');

@@ -11,15 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Repair.belongsTo(models.Tenant);
-
     }
   };
   Repair.init({
     id: DataTypes.UUID,
     tenantId: DataTypes.UUID,
     note: DataTypes.STRING,
-    work: DataTypes.ENUM,
+    type: DataTypes.ENUM,
     complete: DataTypes.BOOLEAN
   }, {
     sequelize,
