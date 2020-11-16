@@ -38,7 +38,7 @@ The owner of a multi-tenant apartment building has approached you to design and 
 3. Create a sql database called **apartments**  use the [SQL Schema](./app/schema.sql) file
 4. Change creditianls to [.env file](.env) in order to connect the app with your database
 5. Run ```node seed.js``` to create tables and rows for the database you created
-6. In the terminal run node `server.js` in order to use the app
+6. In the terminal run `node server.js` in order to use the app
 7. Test Routes in [postman](https://www.postman.com/) 
 
 **The default port is localhost:3000**
