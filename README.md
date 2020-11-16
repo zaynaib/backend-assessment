@@ -37,9 +37,14 @@ The owner of a multi-tenant apartment building has approached you to design and 
 2. Install npm dependencies ```npm install```
 3. Create a sql database called **apartments**  use the [SQL Schema](./app/schema.sql) file
 4. Change the [connection.js](./app/config/connection.js) to connect your database to the app
-5. 
-6. In the terminal run nodemon `server.js`
-7. Test Routes in postman
+5. Run ```node seed.js``` to create tables and rows for the database you created
+6. In the terminal run node `server.js` in order to use the app
+7. Test Routes in postman 
+
+**The default port is localhost:3000**
+An example on how to test routes in post man go to
+
+```localhost:3000/api/tenants```
 
 ## Routes
 
