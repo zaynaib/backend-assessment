@@ -30,10 +30,9 @@ The owner of a multi-tenant apartment building has approached you to design and 
 
 ![alt-text](./er-diagram.png)
 
-
 ## How to run and install
 
-1. Clone repo git clone git@github.com:zaynaib/backend-assessment.git
+1. Clone repo git clone https://github.com/zaynaib/backend-assessment.git
 2. Install npm dependencies ```npm install```
 3. Create a sql database called **apartments**  use the [SQL Schema](./app/schema.sql) file
 4. Change creditianls to [.env file](.env) in order to connect the app with your database
