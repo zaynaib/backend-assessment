@@ -4,9 +4,9 @@ module.exports = {
     await queryInterface.createTable('Tenants', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4
       },
       firstName: {
         type: Sequelize.STRING
@@ -15,12 +15,18 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
-    },
-    {
-      timestamps: false
-      });
+    });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Tenants');

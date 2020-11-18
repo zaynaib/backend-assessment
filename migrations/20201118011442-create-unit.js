@@ -4,12 +4,9 @@ module.exports = {
     await queryInterface.createTable('Units', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      id: {
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4
       },
       bedrooms: {
         type: Sequelize.INTEGER
@@ -21,16 +18,17 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tenantId: {
-        type: Sequelize.UUID,
-        references: {
-          model:'Tenant',
-          key:'id',
-          onDelete: 'SET NULL'
-        }
+        type: Sequelize.UUID
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
-
-    }, {timestamps:false}
-    );
+    });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Units');
