@@ -2,4 +2,4 @@ node_modules
 resources.txt
 .env
 config.json
-connection.js
+app/config/connection.js
