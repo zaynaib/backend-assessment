@@ -1,2 +1,4 @@
 node_modules
 resources.txt
+.env
+config.json

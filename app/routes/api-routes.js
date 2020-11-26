@@ -1,12 +1,5 @@
 
-// This may be confusing but here Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
-
-const Tenant = require("../models/tenant")(sequelize,Sequelize);
-const Unit = require("../models/unit")(sequelize,Sequelize);
-const Repair = require("../models/repair")(sequelize,Sequelize);
+var db = require("../models");
 
 module.exports = function(app){
     
@@ -21,14 +14,14 @@ app.get('/', (req, res) => {
 
   //Read Route
   app.get("/api/tenants",function(req,res){
-        Tenant.findAll({}).then(tenants => {
+        db.tenant.findAll({}).then(tenants => {
       res.json(tenants);
     });
 
   });
 
   app.get("/api/tenants/:id",function(req,res){
-    Tenant.findAll({
+    db.tenant.findAll({
       where:{id:req.params.id}
 
     }).then(tenant => {
@@ -39,12 +32,12 @@ app.get('/', (req, res) => {
   
   //Create Route
   app.post('/api/tenants', (req,res) =>{
-    Tenant.create(req.body).then(newTenant =>{res.json(newTenant)})
+    db.tenant.create(req.body).then(newTenant =>{res.json(newTenant)})
   })
 
   //Delete Route
   app.delete("/api/tenants/:id", (req, res)=> {
-    Tenant.destroy({
+    db.tenant.destroy({
       where: {
         id: req.params.id
       }
@@ -57,7 +50,7 @@ app.get('/', (req, res) => {
     app.put("/api/tenants/:id", (req, res) =>{
       // Update takes in an object describing the properties we want to update, and
       // we use where to describe which objects we want to update
-      Tenant.update({
+      db.tenant.update({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email
@@ -76,14 +69,14 @@ app.get('/', (req, res) => {
       /* -------------------------------------------------------------------------- */
 
       app.get("/api/units",function(req,res){
-        Unit.findAll({}).then( units=> {
+        db.unit.findAll({}).then( units=> {
         res.json(units);
         });
       });
 
       
   app.get("/api/units/:id",function(req,res){
-    Unit.findAll({
+    db.unit.findAll({
       where:{id:req.params.id}
 
     }).then(unit => {
@@ -95,13 +88,13 @@ app.get('/', (req, res) => {
 
         //Create Route
       app.post('/api/units', (req,res) =>{
-        Unit.create(req.body).then(newUnit =>{res.json(newUnit)})
+        db.unit.create(req.body).then(newUnit =>{res.json(newUnit)})
       });
 
 
        //Delete Route
   app.delete("/api/units/:id", (req, res)=> {
-    Unit.destroy({
+    db.unit.destroy({
       where: {
         id: req.params.id
       }
@@ -114,7 +107,7 @@ app.get('/', (req, res) => {
     app.put("/api/units/:id", (req, res) =>{
       // Update takes in an object describing the properties we want to update, and
       // we use where to describe which objects we want to update
-      Unit.update({
+      db.unit.update({
         bedrooms: req.body.bedrooms,
         floor: req.body.floor,
         rent: req.body.rent,
@@ -133,14 +126,14 @@ app.get('/', (req, res) => {
       /* -------------------------------------------------------------------------- */
 
       app.get("/api/repairs",function(req,res){
-        Repair.findAll({}).then( repairs=> {
+        db.repair.findAll({}).then( repairs=> {
         res.json(repairs);
         });
       });
 
       
     app.get("/api/repairs/:id",function(req,res){
-      Repair.findAll({
+      db.repair.findAll({
         where:{id:req.params.id}
 
       }).then(repair => {
@@ -152,13 +145,13 @@ app.get('/', (req, res) => {
 
         //Create Route
       app.post('/api/repairs', (req,res) =>{
-        Repair.create(req.body).then(newRepair =>{res.json(newRepair)})
+        db.repair.create(req.body).then(newRepair =>{res.json(newRepair)})
       });
 
 
        //Delete Route
   app.delete("/api/repairs/:id", (req, res)=> {
-    Repair.destroy({
+    db.repair.destroy({
       where: {
         id: req.params.id
       }
@@ -171,7 +164,7 @@ app.get('/', (req, res) => {
     app.put("/api/repairs/:id", (req, res) =>{
       // Update takes in an object describing the properties we want to update, and
       // we use where to describe which objects we want to update
-      Repair.update({
+      db.repair.update({
         tenantId: req.body.tenantId,
         note:req.body.note,
         type:req.body.type,

@@ -21,7 +21,7 @@ const Repair = sequelize.define("repair",{
     },
     type: {
       type: DataTypes.ENUM,
-      values: ['conditioning', 'flooring', 'plumbing','']
+      values: ['conditioning', 'flooring', 'plumbing','other']
     },
     complete: {
         type:DataTypes.BOOLEAN
